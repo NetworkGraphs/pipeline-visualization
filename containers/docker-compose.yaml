@@ -5,3 +5,9 @@ services:
       dockerfile: graphviz.Dockerfile
     volumes:
       - ../cache:/data
+  apache:
+    image: httpd:latest
+    volumes:
+      - ../view:/usr/local/apache2/htdocs/
+    ports:
+      - 80:80

@@ -23,6 +23,14 @@ def save_json(data,fileName):
     jfile.close()
     return
 
+def save_text(data,fileName):
+    path = dirname(fileName)
+    makedirs(path, exist_ok=True)
+    jfile = open(fileName, "w")
+    jfile.write(data)
+    jfile.close()
+    return
+
 def duration_text(duration: timedelta):
     # Ensure that the duration is non-negative
     if duration < timedelta(0):

@@ -3,6 +3,8 @@ import importlib
 from os.path import dirname,splitext,basename,join
 import state
 from datetime import datetime
+import graph_utils as gutl
+from containers import run
 
 class ArtifactError(Exception):
     """Custom exception for artifact management errors."""
@@ -34,12 +36,14 @@ def set_artifact(data,filepath,type="generic"):
     abs_filepath = join("cache",filepath)
     if(ext == ".json"):
         utl.save_json(data,abs_filepath)
+    gutl.add_edge(state.job,id)
     return
 
 def get_artifact(id):
     if(id not in state.artifacts):
         raise ArtifactError(f"Artifact with ID '{id}' does not exist")
     artifact = state.artifacts[id]
+    gutl.add_edge(id,state.job)
     if(artifact["ext"] == ".json"):
         return utl.load_json(join("cache",artifact["filepath"]))
     return None
@@ -64,7 +68,9 @@ def run_pipeline(pipeline):
         run_stage(stage, jobs)
     utl.save_json(state.artifacts,"cache/artifacts.json")
     utl.save_json(state.pipe,"cache/pipeline.json")
-    
+    utl.save_json(gutl.get_graph(),"cache/dependencies.json")
+    utl.save_text(gutl.get_dot_graph(),"cache/dependencies.dot")
+    run.graphviz("dependencies.dot")
 
 if __name__ == '__main__':
     manifest = utl.load_yaml("manifest.yaml")

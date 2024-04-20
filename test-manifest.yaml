@@ -1,8 +1,0 @@
-- group: fetch
-  step: fetch-data-1
-- group: process
-  step: calculate-functions
-- group: process
-  step: compute-statistics
-- group: build
-  step: generate-website

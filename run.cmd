@@ -1,2 +1,2 @@
 @echo off
-python containers\run.py %*
+venv\Scripts\python runner.py

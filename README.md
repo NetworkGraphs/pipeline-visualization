@@ -2,9 +2,11 @@
 how to render a pipeline flow with graph and time chart
 
 # usage
-to run the pipeline through
+The pipeline can bun run with
 
-    python runner.py
+    run
+
+which will execute `runner.py` from venv
 
 testing containers e.g. graphviz rendering
 
