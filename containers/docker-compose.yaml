@@ -1,0 +1,7 @@
+services:
+  graphviz:
+    build:
+      context: ./dockerfiles
+      dockerfile: graphviz.Dockerfile
+    volumes:
+      - ../cache:/data

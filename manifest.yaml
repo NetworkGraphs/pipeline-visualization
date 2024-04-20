@@ -1,0 +1,9 @@
+# Stage > Job
+pipeline:
+  fetch:
+    fetch-data-1: pipeline.py#fetch
+  process:
+    calculate-functions: pipeline.py#calculate
+    compute-statistics: pipeline.py#compute
+  build:
+    generate-website: pipeline.py#build
