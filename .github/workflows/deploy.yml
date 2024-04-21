@@ -24,8 +24,13 @@ jobs:
         uses: withastro/action@v2
         with:
           path: ./website
-          node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
-          package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+          node-version: 20
+          package-manager: pnpm@latest
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: website-artifact
+          path: cache/web  # Specify the correct output directory here
 
   deploy:
     needs: build
@@ -34,6 +39,12 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: website-artifact
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
