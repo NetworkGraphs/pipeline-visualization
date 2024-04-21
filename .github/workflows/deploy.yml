@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: website-artifact
-          path: cache/web  # Specify the correct output directory here
+          path: ./cache/web
 
   deploy:
     needs: build
