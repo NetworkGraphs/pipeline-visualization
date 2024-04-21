@@ -17,16 +17,28 @@
         "type": "generic",
         "filepath": "fetch/result.json"
     },
-    "timeline": {
-        "path": "process",
-        "ext": ".json",
-        "type": "generic",
-        "filepath": "process/timeline.json"
-    },
     "website": {
         "path": "fetch",
         "ext": ".json",
         "type": "generic",
         "filepath": "fetch/website.json"
+    },
+    "pipeline": {
+        "path": "assets",
+        "ext": ".json",
+        "type": "generic",
+        "filepath": "assets/pipeline.json"
+    },
+    "dependencies": {
+        "path": "assets",
+        "ext": ".json",
+        "type": "graph",
+        "filepath": "assets/dependencies.json"
+    },
+    "timeline": {
+        "path": "assets",
+        "ext": ".json",
+        "type": "generic",
+        "filepath": "assets/timeline.json"
     }
 }

@@ -6,6 +6,7 @@ def graphviz(filename):
     os.chdir(docker_compose_dir)
     command_line = f"docker compose run --rm graphviz -Tsvg {filename} -o {filename}.svg"
     subprocess.run(command_line.split(" "))
+    os.chdir(original_dir)
     return
 
 def run(command):
@@ -16,7 +17,9 @@ def run(command):
     elif(command == "server"):
         os.chdir(docker_compose_dir)
         subprocess.run("docker compose up apache", shell=True, check=True)
+        os.chdir(original_dir)
 
+original_dir = os.getcwd()
 docker_compose_dir = os.path.join(os.path.dirname(__file__))
 
 if __name__ == '__main__':

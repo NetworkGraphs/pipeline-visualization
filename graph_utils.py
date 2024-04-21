@@ -42,8 +42,7 @@ def add_edge(source,target):
     })
     return
 
-def get_dot_graph():
-    global graph
+def get_dot_graph(graph):
     dot_string = graph_to_dot(graph)
     return dot_string
 

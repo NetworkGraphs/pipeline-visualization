@@ -3,7 +3,7 @@ import {load_json} from '@/libs/utils.js'
 import { config } from '@/config.js';
 import {join} from 'path'
 
-const artifacts_map = await load_json('artifacts.json')
+const artifacts_map = await load_json('assets/artifacts.json')
 
 export async function GET({params}){
     try {

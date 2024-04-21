@@ -1,6 +1,7 @@
 
 pipe = []
 artifacts = {}
+assets = {}
 
 stage = ""
 job = ""

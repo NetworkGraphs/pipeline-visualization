@@ -1,0 +1,34 @@
+[
+    {
+        "stage": "fetch",
+        "job": "fetch-data-1",
+        "start": "2024-04-21 15:06:16.087712",
+        "stop": "2024-04-21 15:06:16.188543",
+        "duration": "0:00:00.100831",
+        "duration_text": "100 ms"
+    },
+    {
+        "stage": "process",
+        "job": "calculate-functions",
+        "start": "2024-04-21 15:06:16.188543",
+        "stop": "2024-04-21 15:06:16.490527",
+        "duration": "0:00:00.301984",
+        "duration_text": "301 ms"
+    },
+    {
+        "stage": "process",
+        "job": "compute-statistics",
+        "start": "2024-04-21 15:06:16.490527",
+        "stop": "2024-04-21 15:06:16.891631",
+        "duration": "0:00:00.401104",
+        "duration_text": "401 ms"
+    },
+    {
+        "stage": "build",
+        "job": "generate-website",
+        "start": "2024-04-21 15:06:16.891631",
+        "stop": "2024-04-21 15:06:17.394657",
+        "duration": "0:00:00.503026",
+        "duration_text": "503 ms"
+    }
+]
