@@ -1,0 +1,26 @@
+{
+    "content": {
+        "path": "fetch",
+        "ext": ".json",
+        "type": "generic",
+        "filepath": "fetch/content.json"
+    },
+    "stats": {
+        "path": "fetch",
+        "ext": ".json",
+        "type": "generic",
+        "filepath": "fetch/stats.json"
+    },
+    "result": {
+        "path": "fetch",
+        "ext": ".json",
+        "type": "generic",
+        "filepath": "fetch/result.json"
+    },
+    "website": {
+        "path": "fetch",
+        "ext": ".json",
+        "type": "generic",
+        "filepath": "fetch/website.json"
+    }
+}

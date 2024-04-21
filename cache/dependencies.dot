@@ -1,0 +1,18 @@
+digraph G {
+    A [label="fetch-data-1", class="job", shape="box"];
+    B [label="content", class="artifact", shape="ellipse"];
+    C [label="calculate-functions", class="job", shape="box"];
+    D [label="stats", class="artifact", shape="ellipse"];
+    E [label="compute-statistics", class="job", shape="box"];
+    F [label="result", class="artifact", shape="ellipse"];
+    G [label="generate-website", class="job", shape="box"];
+    H [label="website", class="artifact", shape="ellipse"];
+    A -> B;
+    B -> C;
+    C -> D;
+    B -> E;
+    E -> F;
+    D -> G;
+    F -> G;
+    G -> H;
+}

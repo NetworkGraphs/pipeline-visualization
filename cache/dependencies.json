@@ -1,0 +1,70 @@
+{
+    "nodes": [
+        {
+            "label": "fetch-data-1",
+            "class": "job"
+        },
+        {
+            "label": "content",
+            "class": "artifact"
+        },
+        {
+            "label": "calculate-functions",
+            "class": "job"
+        },
+        {
+            "label": "stats",
+            "class": "artifact"
+        },
+        {
+            "label": "compute-statistics",
+            "class": "job"
+        },
+        {
+            "label": "result",
+            "class": "artifact"
+        },
+        {
+            "label": "generate-website",
+            "class": "job"
+        },
+        {
+            "label": "website",
+            "class": "artifact"
+        }
+    ],
+    "edges": [
+        {
+            "source": "fetch-data-1",
+            "target": "content"
+        },
+        {
+            "source": "content",
+            "target": "calculate-functions"
+        },
+        {
+            "source": "calculate-functions",
+            "target": "stats"
+        },
+        {
+            "source": "content",
+            "target": "compute-statistics"
+        },
+        {
+            "source": "compute-statistics",
+            "target": "result"
+        },
+        {
+            "source": "stats",
+            "target": "generate-website"
+        },
+        {
+            "source": "result",
+            "target": "generate-website"
+        },
+        {
+            "source": "generate-website",
+            "target": "website"
+        }
+    ]
+}
