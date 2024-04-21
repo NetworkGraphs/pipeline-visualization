@@ -5,14 +5,16 @@ digraph G {
     D [label="stats", class="artifact", shape="ellipse"];
     E [label="compute-statistics", class="job", shape="box"];
     F [label="result", class="artifact", shape="ellipse"];
-    G [label="generate-website", class="job", shape="box"];
-    H [label="website", class="artifact", shape="ellipse"];
+    G [label="timeline", class="artifact", shape="ellipse"];
+    H [label="generate-website", class="job", shape="box"];
+    I [label="website", class="artifact", shape="ellipse"];
     A -> B;
     B -> C;
     C -> D;
     B -> E;
     E -> F;
-    D -> G;
-    F -> G;
-    G -> H;
+    E -> G;
+    D -> H;
+    F -> H;
+    H -> I;
 }

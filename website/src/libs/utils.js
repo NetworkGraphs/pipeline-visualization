@@ -12,11 +12,18 @@ async function load_yaml(path,folder="cachedir"){
     return await load_yaml_abs(join(config[folder],path));
 }
 
+async function load_json(path,folder="cachedir"){
+    const abs_path = join(config[folder],path)
+    const text = await readFile(abs_path,'utf-8')
+    return JSON.parse(text)
+  }
+  
 async function load_text(path,folder="cachedir"){
     return await readFile(join(config[folder],path));
 }
 
 export{
     load_yaml,
-    load_text
+    load_text,
+    load_json
 }

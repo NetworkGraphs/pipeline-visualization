@@ -1,0 +1,12 @@
+---
+export interface Props {
+  timeline_file: string;
+}
+
+const {timeline_file} = Astro.props as Props;
+
+
+---
+<div id={timeline_file} class="visjs timeline" data-file={timeline_file}></div>
+
+<script src="./timeline.js" />

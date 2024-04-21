@@ -1,10 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SvgInline from '@/components/SvgInline.astro';
+import Timeline from '@/components/Timeline.astro';
 ---
 
 <Layout title="Welcome to Astro.">
+    <h1>Dependencies</h1>
 	<SvgInline filepath='dependencies.dot.svg'/>
+    <h1>timeline</h1>
+    <Timeline timeline_file='timeline'/>
 </Layout>
 
 <style>

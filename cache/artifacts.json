@@ -17,6 +17,12 @@
         "type": "generic",
         "filepath": "fetch/result.json"
     },
+    "timeline": {
+        "path": "process",
+        "ext": ".json",
+        "type": "generic",
+        "filepath": "process/timeline.json"
+    },
     "website": {
         "path": "fetch",
         "ext": ".json",

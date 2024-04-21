@@ -5,5 +5,8 @@ import {config} from './config.js'
 export default defineConfig({
     output: 'static',
     outDir: config.outDir,
-    base: config.base
+    base: config.base,
+    devToolbar: {
+        enabled: false
+    }
 });
