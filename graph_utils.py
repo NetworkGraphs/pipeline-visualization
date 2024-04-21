@@ -17,9 +17,12 @@ def graph_to_dot(graph):
     dot_string = "digraph G {\n"
     nodes_map = {}
     for index,node in enumerate(graph["nodes"],1):
-        nodes_map[node] = int_to_alphabet(index)
+        nodes_map[node["label"]] = int_to_alphabet(index)
     for node in graph["nodes"]:
-        dot_string += f'    {nodes_map[node]} [label="{node}"];\n'
+        label = node["label"]
+        node_class = node["class"]
+        node_shape = shapes_map[node_class]
+        dot_string += f'    {nodes_map[label]} [label="{label}", class="{node_class}", shape="{node_shape}"];\n'
     for edge in graph["edges"]:
         source = nodes_map[edge["source"]]
         target = nodes_map[edge["target"]]
@@ -34,8 +37,8 @@ def add_edge(source,target):
     if(target not in graph["nodes"]):
         graph["nodes"].append(target)
     graph["edges"].append({
-        "source":source,
-        "target":target
+        "source":source["label"],
+        "target":target["label"]
     })
     return
 
@@ -51,4 +54,9 @@ def get_graph():
 graph = {
     "nodes":[],
     "edges":[]
+}
+
+shapes_map = {
+    "job":"box",
+    "artifact":"ellipse"
 }

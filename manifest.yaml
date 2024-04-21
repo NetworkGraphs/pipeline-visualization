@@ -7,3 +7,5 @@ pipeline:
     compute-statistics: pipeline.py#compute
   build:
     generate-website: pipeline.py#build
+website:
+  base: pipeline-visualization

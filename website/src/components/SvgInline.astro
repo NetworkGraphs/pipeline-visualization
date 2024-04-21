@@ -1,0 +1,14 @@
+---
+//https://ellodave.dev/blog/article/using-svgs-as-astro-components-and-inline-css/
+import {load_text} from '@/libs/utils.js'
+
+export interface Props {
+  filepath: string;
+}
+
+const { filepath } = Astro.props as Props;
+const innerHTML = await load_text(filepath);
+---
+
+<Fragment set:html={innerHTML} />
+

@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SvgInline from '@/components/SvgInline.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<SvgInline filepath='dependencies.dot.svg'/>
+</Layout>
+
+<style>
+:global(.artifact > ellipse){
+    fill:antiquewhite;
+}
+</style>

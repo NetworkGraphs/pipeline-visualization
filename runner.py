@@ -36,14 +36,14 @@ def set_artifact(data,filepath,type="generic"):
     abs_filepath = join("cache",filepath)
     if(ext == ".json"):
         utl.save_json(data,abs_filepath)
-    gutl.add_edge(state.job,id)
+    gutl.add_edge({"label":state.job,"class":"job"},{"label":id,"class":"artifact"})
     return
 
 def get_artifact(id):
     if(id not in state.artifacts):
         raise ArtifactError(f"Artifact with ID '{id}' does not exist")
     artifact = state.artifacts[id]
-    gutl.add_edge(id,state.job)
+    gutl.add_edge({"label":id,"class":"artifact"},{"label":state.job,"class":"job"})
     if(artifact["ext"] == ".json"):
         return utl.load_json(join("cache",artifact["filepath"]))
     return None
