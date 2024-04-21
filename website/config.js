@@ -9,6 +9,7 @@ const outdir = join(cachedir,"web")
 const base = env.PUBLIC_BASE
 
 const config = {
+    webdir,
     rootdir,
     base,
     cachedir,

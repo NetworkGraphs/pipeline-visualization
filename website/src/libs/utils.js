@@ -19,7 +19,11 @@ async function load_json(path,folder="cachedir"){
   }
   
 async function load_text(path,folder="cachedir"){
-    return await readFile(join(config[folder],path));
+    if(folder == "icons"){
+        return await readFile(join(config.webdir,"src/icons",path));
+    }else{
+        return await readFile(join(config[folder],path));
+    }
 }
 
 export{

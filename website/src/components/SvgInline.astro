@@ -4,10 +4,11 @@ import {load_text} from '@/libs/utils.js'
 
 export interface Props {
   filepath: string;
+  folder: string;
 }
 
-const { filepath } = Astro.props as Props;
-const innerHTML = await load_text(filepath);
+const { filepath, folder="cachedir" } = Astro.props as Props;
+const innerHTML = await load_text(filepath,folder);
 ---
 
 <Fragment set:html={innerHTML} />

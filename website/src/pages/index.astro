@@ -5,6 +5,41 @@ import Timeline from '@/components/Timeline.astro';
 ---
 
 <Layout title="Welcome to Astro.">
+    <a href="https://github.com/NetworkGraphs/pipeline-visualization" target="_blank">
+        <div class="social">
+            <SvgInline filepath='github.svg', folder='icons'/>
+        </div>
+    </a>
+    <div>
+        <h1>Workflow</h1>
+        <div>
+            <span style='color:#696969; '># Stage > Job</span>
+        </div>
+        <div>
+            <span style='color:#120165; font-weight:bold; '>pipeline</span><span style='color:#808030; '>:</span>
+        </div>
+        <div>
+            <span style='color:#120165; font-weight:bold; '>&nbsp; fetch</span><span style='color:#808030; '>:</span>
+        </div>
+        <div>
+            <span style='color:#120165; font-weight:bold; '>&nbsp;&nbsp;fetch-data-1</span><span style='color:#808030; '>:</span> <span style='color:#0000e6; '>pipeline.py</span><span style='color:#696969; '>#fetch</span>
+        </div>
+        <div>
+            <span style='color:#120165; font-weight:bold; '>&nbsp;process</span><span style='color:#808030; '>:</span>
+        </div>
+        <div>
+            <span style='color:#120165; font-weight:bold; '>&nbsp;&nbsp;calculate-functions</span><span style='color:#808030; '>:</span> <span style='color:#0000e6; '>pipeline.py</span><span style='color:#696969; '>#calculate</span>
+        </div>
+        <div>
+            <span style='color:#120165; font-weight:bold; '>&nbsp;&nbsp;compute-statistics</span><span style='color:#808030; '>:</span> <span style='color:#0000e6; '>pipeline.py</span><span style='color:#696969; '>#compute</span>
+        </div>
+        <div>
+            <span style='color:#120165; font-weight:bold; '>&nbsp;build</span><span style='color:#808030; '>:</span>
+        </div>
+        <div>
+            <span style='color:#120165; font-weight:bold; '>&nbsp;&nbsp;generate-website</span><span style='color:#808030; '>:</span> <span style='color:#0000e6; '>pipeline.py</span><span style='color:#696969; '>#build</span>
+        </div>
+    </div>
     <h1>Dependencies</h1>
 	<SvgInline filepath='assets/dependencies.dot.svg'/>
     <h1>timeline</h1>
@@ -15,4 +50,17 @@ import Timeline from '@/components/Timeline.astro';
 :global(.artifact > ellipse){
     fill:antiquewhite;
 }
+.social{
+    position: fixed;
+    top:5px;
+    right:5px;
+    width:30px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
 </style>
+
+<script src="./artifacts.js" />

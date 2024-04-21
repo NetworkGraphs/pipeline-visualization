@@ -12,10 +12,10 @@ async function init(){
         const data_file = timeline_element.dataset.file;
         try {
             const file_url = `${config.base}/artifacts/${data_file}`
-            console.log(`fetching ${file_url}`)
+            //console.log(`fetching ${file_url}`)
             const response = await fetch(file_url);
             const data_timeline = await response.json(); // Assuming the response needs to be converted to JSON
-            new Timeline(timeline_element, data_timeline, {})
+            new Timeline(timeline_element, data_timeline.items,data_timeline.groups,{})
         } catch (error) {
             console.error('Failed to fetch data:', error);
         }

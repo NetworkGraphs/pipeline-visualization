@@ -1,12 +1,12 @@
 digraph G {
-    A [label="fetch-data-1", class="job", shape="box"];
-    B [label="content", class="artifact", shape="ellipse"];
-    C [label="calculate-functions", class="job", shape="box"];
-    D [label="stats", class="artifact", shape="ellipse"];
-    E [label="compute-statistics", class="job", shape="box"];
-    F [label="result", class="artifact", shape="ellipse"];
-    G [label="generate-website", class="job", shape="box"];
-    H [label="website", class="artifact", shape="ellipse"];
+    A [id="fetch-data-1", label="fetch-data-1", class="job", shape="box"];
+    B [id="content", label="content", class="artifact", shape="ellipse"];
+    C [id="calculate-functions", label="calculate-functions", class="job", shape="box"];
+    D [id="stats", label="stats", class="artifact", shape="ellipse"];
+    E [id="compute-statistics", label="compute-statistics", class="job", shape="box"];
+    F [id="result", label="result", class="artifact", shape="ellipse"];
+    G [id="generate-website", label="generate-website", class="job", shape="box"];
+    H [id="website", label="website", class="artifact", shape="ellipse"];
     A -> B;
     B -> C;
     C -> D;

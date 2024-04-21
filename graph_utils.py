@@ -22,7 +22,7 @@ def graph_to_dot(graph):
         label = node["label"]
         node_class = node["class"]
         node_shape = shapes_map[node_class]
-        dot_string += f'    {nodes_map[label]} [label="{label}", class="{node_class}", shape="{node_shape}"];\n'
+        dot_string += f'    {nodes_map[label]} [id="{label}", label="{label}", class="{node_class}", shape="{node_shape}"];\n'
     for edge in graph["edges"]:
         source = nodes_map[edge["source"]]
         target = nodes_map[edge["target"]]

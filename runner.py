@@ -102,16 +102,29 @@ def run_pipeline(pipeline):
 
 
 def generate_timeline(pipe):
-    timeline = []
+    items = []
+    groups = []
+    groups_names = []   #user to keep entries unique
     for item in pipe:
-        timeline.append({
+        if(item["stage"] not in groups_names):
+            groups_names.append(item["stage"])
+            groups.append({
+                    "id":item["stage"],
+                    "content":item["stage"]
+                })
+        items.append({
             "id":item["job"],
             "content":item["job"],
+            "group":item["stage"],
             "start":item["start"],
             "end":item["stop"]
         })
+    timeline = {
+        "items":items,
+        "groups":groups
+    }
     return timeline
 
+manifest = utl.load_yaml("manifest.yaml")
 if __name__ == '__main__':
-    manifest = utl.load_yaml("manifest.yaml")
     run_pipeline(manifest["pipeline"])
